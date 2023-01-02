@@ -1,10 +1,3 @@
-<?php
-if (isset($_GET['pesan'])) {
-    if ($_GET['pesan'] == "gagal") {
-        echo "<div class='alert'>Username dan Password tidak sesuai !</div>";
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +9,7 @@ if (isset($_GET['pesan'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Login - SepatuKu.id</title>
+    <title>Daftar - SepatuKu.id</title>
 </head>
 
 <body>
@@ -31,10 +24,18 @@ if (isset($_GET['pesan'])) {
                     <div class="col-sm-4">
                         <div class="card rounded-start shadow">
                             <div class="card-header">
-                                <h4 class="text-center">Masuk</h4>
+                                <h4 class="text-center">Daftar</h4>
                             </div>
                             <div class="card-body">
-                                <form action="cek_login.php" method="post">
+                                <form action="proses_daftar.php" method="post">
+                                    <div class="mb-3">
+                                        <label for="nama" class="form-label">Nama Lengkap</label>
+                                        <input type="text" class="form-control" id="nama" name="nama">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="date" class="form-label">Tanggal Lahir</label>
+                                        <input type="date" class="form-control" id="date" name="date">
+                                    </div>
                                     <div class="mb-3">
                                         <label for="email" class="form-label">Email address</label>
                                         <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
@@ -43,12 +44,14 @@ if (isset($_GET['pesan'])) {
                                         <label for="password" class="form-label">Password</label>
                                         <input type="password" class="form-control" id="password" name="password">
                                     </div>
-
-                                    <button type="submit" class="btn btn-sm btn-primary">Masuk</button>
-                                    <a href="daftar.php" class="btn btn-sm btn-primary">daftar</a>
+                                    <div class="mb-3">
+                                        <label for="password2" class="form-label">Konfirmasi Password</label>
+                                        <input type="password2" class="form-control" id="password2" name="password2">
+                                    </div>
+                                    <button type="submit" class="btn btn-sm btn-primary">daftar</button>
                                     <div class="row mt-2">
                                         <div class="col">
-                                            <a style="text-decoration: none;" href="lupa_password.php">lupa password?klik disini</a>
+                                            <a style="text-decoration: none;" href="login.php">sudah punya akun?login</a>
                                         </div>
                                     </div>
 
