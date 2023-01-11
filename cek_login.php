@@ -13,14 +13,21 @@ if ($cek > 0) {
 	if (password_verify($password, $data['password'])) {
 		if ($data['namarole'] == "admin") {
 			// buat session login dan email
-			$_SESSION['email'] = $email;
+			$_SESSION['nama'] = $data['nama'];
+			$_SESSION['email'] = $data['email'];
 			$_SESSION['level'] = "admin";
-			echo "ANDA ADALAH ADMIN";
+			$_SESSION['flash_message'] = "<script>toastr['success']('Login Berhasil', 'Berhasil')</script>";
+			header("location:admin");
 		} else if ($data['namarole'] == "user") {
-			$_SESSION['email'] = $email;
-			$_SESSION['level'] = "pegawai";
+			$_SESSION['nama'] = $data['nama'];
+			$_SESSION['email'] = $data['email'];
+			$_SESSION['level'] = "user";
+			$_SESSION['flash_message'] = "<script>toastr['success']('Login Berhasil', 'Berhasil')</script>";
 			header("location:index.php");
 		}
+	} else {
+		$_SESSION['flash_message'] = "<script>toastr['error']('username/password salah', 'Berhasil')</script>";
+		header("location:login");
 	}
 } else {
 	header("location:index.php?pesan=gagal");

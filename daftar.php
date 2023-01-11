@@ -1,11 +1,18 @@
 <?php include 'templates/header.php'; ?>
 <div class="container">
     <h2 class="text-center mt-5"><b>SepatuKu.id</b></h2>
+    <?php
+    if (isset($_SESSION['flash_message'])) {
+        $pesan = $_SESSION['flash_message'];
+        unset($_SESSION['flash_message']);
+        echo $pesan;
+    }
+    ?>
     <div class="row mt-4">
         <div class="col-sm-12 my-auto"></div>
         <div class="row">
             <div class="col-sm-8">
-                <img src="assets/img/login_page.png" class="img-fluid rounded-start shadow" alt="Login_page">
+                <img src="<?= $config['base_url']; ?>assets/img/login_page.png" class="img-fluid rounded-start shadow" alt="Login_page">
             </div>
             <div class="col-sm-4">
                 <div class="card rounded-start shadow">
@@ -20,7 +27,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="date" class="form-label">Tanggal Lahir</label>
-                                <input type="date" class="form-control" id="date" name="date">
+                                <input type="date" class="form-control" id="date" name="tgl_lahir">
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email address</label>
@@ -32,12 +39,12 @@
                             </div>
                             <div class="mb-3">
                                 <label for="password2" class="form-label">Konfirmasi Password</label>
-                                <input type="password2" class="form-control" id="password2" name="password2">
+                                <input type="password" class="form-control" id="password2" name="password2">
                             </div>
                             <button type="submit" class="btn btn-sm btn-primary">daftar</button>
                             <div class="row mt-2">
                                 <div class="col">
-                                    <a style="text-decoration: none;" href="login.php">sudah punya akun?login</a>
+                                    <a style="text-decoration: none;" href="login">sudah punya akun?login</a>
                                 </div>
                             </div>
 

@@ -1,18 +1,26 @@
+<?php include 'templates/header.php'; ?>
 <?php
-if (isset($_GET['pesan'])) {
-    if ($_GET['pesan'] == "gagal") {
-        echo "<div class='alert'>Username dan Password tidak sesuai !</div>";
+ob_start();
+if (isset($_SESSION['flash_message'])) {
+    $pesan = $_SESSION['flash_message'];
+    unset($_SESSION['flash_message']);
+    echo $pesan;
+}
+if (isset($_SESSION['level'])) {
+    if ($_SESSION['level'] == 'admin') {
+        header("location:admin/index.php");
+    } else {
+        header("location:index.php");
     }
 }
 ?>
-<?php include 'templates/header.php'; ?>
 <div class="container">
     <h2 class="text-center mt-5"><b>SepatuKu.id</b></h2>
     <div class="row mt-4">
         <div class="col-sm-12 my-auto">
             <div class="row">
                 <div class="col-sm-8">
-                    <img src="assets/img/login_page.png" class="img-fluid rounded-start shadow" alt="Login_page">
+                    <img src="<?= $config['base_url']; ?>assets/img/login_page.png" class="img-fluid rounded-start shadow" alt="Login_page">
                 </div>
                 <div class="col-sm-4">
                     <div class="card rounded-start shadow">
@@ -31,10 +39,10 @@ if (isset($_GET['pesan'])) {
                                 </div>
 
                                 <button type="submit" class="btn btn-sm btn-primary">Masuk</button>
-                                <a href="daftar.php" class="btn btn-sm btn-primary">daftar</a>
+                                <a href="daftar" class="btn btn-sm btn-primary">daftar</a>
                                 <div class="row mt-2">
                                     <div class="col">
-                                        <a style="text-decoration: none;" href="lupa_password.php">lupa password?klik disini</a>
+                                        <a style="text-decoration: none;" href="lupa_password">lupa password?klik disini</a>
                                     </div>
                                 </div>
 
