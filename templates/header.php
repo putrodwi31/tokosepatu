@@ -55,7 +55,7 @@
                                 <a class="nav-link <?= $uri[2] == 'admin' && !$uri[3] ? 'active' : ''; ?>" aria-current="page" href="<?= $config['base_url']; ?>admin"><i class="icon fa-solid fa-house"></i> Dashboard</a>
                             </li>
                             <li class="nav-item text-center"></li>
-                            <a class="nav-link <?= $uri[3] == 'datasepatu' || $uri[3] == 'tambahsepatu' ?  'active' : ''; ?>" href="<?= $config['base_url']; ?>admin/datasepatu"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Data Penjualan</a>
+                            <a class="nav-link <?= $uri[3] == 'sepatu' ?  'active' : ''; ?>" href="<?= $config['base_url']; ?>admin/sepatu/"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Data Penjualan</a>
                             </li>
                             <li class="nav-item text-center">
                                 <a class="nav-link" href="transaksi"><i class="fa-solid fa-shuffle"></i> Transaksi</a>

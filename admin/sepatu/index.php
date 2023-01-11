@@ -1,4 +1,4 @@
-<?php include '../templates/header.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/tokosepatu" . "/templates/header.php"; ?>
 <?php  ?>
 <div class="container">
     <div class="alert alert-info text-center mt-4">
@@ -25,7 +25,7 @@
                 <th>Foto</th>
                 <th>Aksi</th>
             </tr>
-            <?php include '../koneksi.php';
+            <?php include $_SERVER['DOCUMENT_ROOT'] . "/tokosepatu" .  '/koneksi.php';
             $query = mysqli_query($conn, "SELECT * FROM sepatu");
             $no = 1;
             while ($row = mysqli_fetch_array($query)) { ?>
@@ -50,4 +50,4 @@
     </div>
 </div>
 
-<?php include '../templates/footer.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/tokosepatu" .  '/templates/footer.php'; ?>

@@ -1,5 +1,5 @@
-<?php include '../templates/header.php';
-include '../koneksi.php';
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/tokosepatu" . "/templates/header.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/tokosepatu" . '/koneksi.php';
 $queryK = mysqli_query($conn, "SELECT * FROM kategori");
 ?>
 <div class="container ">
@@ -73,7 +73,7 @@ $queryK = mysqli_query($conn, "SELECT * FROM kategori");
                 <div class="row" style=" margin-top:10px; margin-left:auto; margin-bottom:10px;">
                     <button type="submit" name="simpan" class="btn btn-success col-lg-1">Simpan</button>
                     <button type="reset" name="batal" class="btn btn-success col-lg-1" style="margin-left:10px;">Batal</button>
-                    <a href="datasepatu" class="btn btn-primary col-lg-1" style="margin-left:10px;">Kembali</a>
+                    <a href="index" class="btn btn-primary col-lg-1" style="margin-left:10px;">Kembali</a>
                 </div>
                 <!-- <a href="datasepatu.php">Kembali</a> -->
             </form>
@@ -81,4 +81,4 @@ $queryK = mysqli_query($conn, "SELECT * FROM kategori");
     </div>
 </div>
 </div>
-<?php include '../templates/footer.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/tokosepatu" .  '/templates/footer.php'; ?>

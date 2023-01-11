@@ -1,12 +1,12 @@
-<?php include '../templates/header.php';
-include '../koneksi.php';
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/tokosepatu" . "/templates/header.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/tokosepatu" .  '/koneksi.php';
 $queryK = mysqli_query($conn, "SELECT * FROM kategori");
 ?>
 <div class="container ">
     <div class="panel">
         <div class="panel-heading">
             <h3 class="text-center mt-4">FORM EDIT DATA SEPATU</h3><br>
-            <?php include '../koneksi.php';
+            <?php include $_SERVER['DOCUMENT_ROOT'] . "/tokosepatu" .  '/koneksi.php';
 
             $id = $_GET['id'];
             $data = mysqli_query($conn, "SELECT * FROM sepatu INNER JOIN kategori ON sepatu.id_kategori = kategori.id where kode_Sepatu='$id'");
@@ -78,13 +78,12 @@ $queryK = mysqli_query($conn, "SELECT * FROM kategori");
                     </div>
                     <div class="row" style=" margin-top:10px; margin-left:auto; margin-bottom:10px;">
                         <button type="submit" class="btn btn-success col-lg-1">Update</button>
-                        <a href="datasepatu" class="btn btn-primary col-lg-1" style="margin-left:10px;">Kembali</a>
+                        <a href="index" class="btn btn-primary col-lg-1" style="margin-left:10px;">Kembali</a>
                     </div>
-                    <!-- <a href="datasepatu.php">Kembali</a> -->
                 </form>
             <?php } ?>
         </div>
     </div>
 </div>
 </div>
-<?php include '../templates/footer.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/tokosepatu" .  '/templates/footer.php'; ?>

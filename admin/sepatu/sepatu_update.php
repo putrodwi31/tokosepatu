@@ -35,4 +35,4 @@ if ($foto) {
     $kucing = mysqli_query($conn, "UPDATE sepatu SET nama_sepatu='$namasepatu', merk='$merk', ukuran='$ukuran', harga='$harga', stok='$stok', keterangan='$keterangan' WHERE kode_sepatu='$kodesepatu'");
 }
 
-header("location:datasepatu");
+header("location:index");
